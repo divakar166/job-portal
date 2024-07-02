@@ -1,6 +1,7 @@
 import Spinner from "./Spinner";
 import { useState, useEffect } from "react";
-import jobs from "../utils/data";
+import { jobs } from "../utils/data";
+import Card from "./Card";
 
 const RecommendedJobsSection = () => {
     const [loading, setLoading] = useState(true);
@@ -14,7 +15,7 @@ const RecommendedJobsSection = () => {
                 .slice(0, 6);
 
             setJobsData(recommendedJobs);
-            setLoading(false); // Set loading to false after fetching the jobs
+            setLoading(false);
         };
         fetchJobs();
     }, []);
@@ -24,7 +25,7 @@ const RecommendedJobsSection = () => {
             {loading ? <Spinner /> : (
                 <div className="grid grid-cols-3">
                     {jobsData.map((job, index) => (
-                        <div key={index}>{job.title}</div>
+                        <Card key={index} job={job} />
                     ))}
                 </div>
             )}
