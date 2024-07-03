@@ -57,10 +57,12 @@ const Card = ({ job }) => {
                     ))}
                 </div>
             </div>
-            <div className="flex justify-between items-center p-2 bg-white flex-shrink">
+            <div className="flex justify-between items-center px-4 py-2 bg-white flex-shrink">
                 <div>
-                    <div>{job.salary_or_stipend} LPA</div>
-                    <div>{job.location}</div>
+                    <div className="text-slate-500">
+                        {job.salary_or_stipend} LPA
+                    </div>
+                    <div className="text-slate-500">{job.location}</div>
                 </div>
                 <div>
                     <a

@@ -1,9 +1,9 @@
-// import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import HomeCards from "../components/HomeCards";
 import JobListings from "../components/JobListings";
 import SubscribeSection from "../components/SubscribeSection";
 import ViewAll from "../components/common/ViewAll";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -13,6 +13,7 @@ const HomePage = () => {
       <JobListings isHome={true} />
       <ViewAll />
       <SubscribeSection />
+      <Footer />
     </div>
   );
 };
