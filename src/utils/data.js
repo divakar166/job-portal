@@ -10,7 +10,7 @@ const jobs = [
             description: "Leading software development company.",
             registration_date: "2024-06-30T12:00:00Z",
             job_opportunities_posted: 1,
-            candidates_hired: 30
+            candidates_hired: 30,
         },
         posted_on: "2024-07-01T12:00:00Z",
         work_type: "Work From Office",
@@ -21,9 +21,9 @@ const jobs = [
         salary_or_stipend: "30",
         apply_by: "2024-07-04T12:00:00Z",
         applicants_count: 302,
-        skills_required: ['Python', 'ReactJS', 'Java'],
+        skills_required: ["Python", "ReactJS", "Java"],
         openings: 3,
-        perks: ['Flexible work hour']
+        perks: ["Flexible work hour"],
     },
     {
         id: "2",
@@ -36,7 +36,7 @@ const jobs = [
             description: "Innovative tech solutions provider.",
             registration_date: "2023-12-01T12:00:00Z",
             job_opportunities_posted: 10,
-            candidates_hired: 100
+            candidates_hired: 100,
         },
         posted_on: "2024-06-25T12:00:00Z",
         work_type: "Remote",
@@ -47,9 +47,9 @@ const jobs = [
         salary_or_stipend: "4.8",
         apply_by: "2024-07-05T12:00:00Z",
         applicants_count: 200,
-        skills_required: ['Node.js', 'Express', 'MongoDB'],
+        skills_required: ["Node.js", "Express", "MongoDB"],
         openings: 2,
-        perks: ['Remote work', 'Health insurance']
+        perks: ["Remote work", "Health insurance"],
     },
     {
         id: "3",
@@ -62,7 +62,7 @@ const jobs = [
             description: "Creating stunning web experiences.",
             registration_date: "2024-01-15T12:00:00Z",
             job_opportunities_posted: 7,
-            candidates_hired: 45
+            candidates_hired: 45,
         },
         posted_on: "2024-06-28T12:00:00Z",
         work_type: "Hybrid",
@@ -73,9 +73,9 @@ const jobs = [
         salary_or_stipend: "6",
         apply_by: "2024-07-10T12:00:00Z",
         applicants_count: 150,
-        skills_required: ['React', 'Redux', 'CSS'],
+        skills_required: ["React", "Redux", "CSS"],
         openings: 4,
-        perks: ['Hybrid work', 'Stock options']
+        perks: ["Hybrid work", "Stock options"],
     },
     {
         id: "4",
@@ -88,7 +88,7 @@ const jobs = [
             description: "Empowering data-driven decisions.",
             registration_date: "2023-05-10T12:00:00Z",
             job_opportunities_posted: 15,
-            candidates_hired: 80
+            candidates_hired: 80,
         },
         posted_on: "2024-06-30T12:00:00Z",
         work_type: "Work From Office",
@@ -99,9 +99,9 @@ const jobs = [
         salary_or_stipend: "9",
         apply_by: "2024-07-15T12:00:00Z",
         applicants_count: 250,
-        skills_required: ['Python', 'Machine Learning', 'SQL'],
+        skills_required: ["Python", "Machine Learning", "SQL"],
         openings: 5,
-        perks: ['Health insurance', 'Retirement plan']
+        perks: ["Health insurance", "Retirement plan"],
     },
     {
         id: "5",
@@ -114,7 +114,7 @@ const jobs = [
             description: "Creating user-friendly designs.",
             registration_date: "2023-08-22T12:00:00Z",
             job_opportunities_posted: 8,
-            candidates_hired: 60
+            candidates_hired: 60,
         },
         posted_on: "2024-06-22T12:00:00Z",
         work_type: "Remote",
@@ -125,9 +125,9 @@ const jobs = [
         salary_or_stipend: "12",
         apply_by: "2024-07-09T12:00:00Z",
         applicants_count: 180,
-        skills_required: ['Figma', 'Sketch', 'Adobe XD'],
+        skills_required: ["Figma", "Sketch", "Adobe XD"],
         openings: 3,
-        perks: ['Remote work', 'Flexible schedule']
+        perks: ["Remote work", "Flexible schedule"],
     },
     {
         id: "6",
@@ -140,7 +140,7 @@ const jobs = [
             description: "Streamlining cloud operations.",
             registration_date: "2023-06-01T12:00:00Z",
             job_opportunities_posted: 5,
-            candidates_hired: 50
+            candidates_hired: 50,
         },
         posted_on: "2024-06-18T12:00:00Z",
         work_type: "Work From Office",
@@ -151,9 +151,9 @@ const jobs = [
         salary_or_stipend: "15",
         apply_by: "2024-07-05T12:00:00Z",
         applicants_count: 220,
-        skills_required: ['AWS', 'Docker', 'Kubernetes'],
+        skills_required: ["AWS", "Docker", "Kubernetes"],
         openings: 2,
-        perks: ['Health insurance', 'Gym membership']
+        perks: ["Health insurance", "Gym membership"],
     },
     {
         id: "7",
@@ -166,7 +166,7 @@ const jobs = [
             description: "Pioneering AI solutions.",
             registration_date: "2023-07-15T12:00:00Z",
             job_opportunities_posted: 12,
-            candidates_hired: 70
+            candidates_hired: 70,
         },
         posted_on: "2024-07-03T12:00:00Z",
         work_type: "Remote",
@@ -177,9 +177,9 @@ const jobs = [
         salary_or_stipend: "7",
         apply_by: "2024-07-20T12:00:00Z",
         applicants_count: 140,
-        skills_required: ['Python', 'TensorFlow', 'PyTorch'],
+        skills_required: ["Python", "TensorFlow", "PyTorch"],
         openings: 3,
-        perks: ['Remote work', 'Stock options']
+        perks: ["Remote work", "Stock options"],
     },
     {
         id: "8",
@@ -192,7 +192,7 @@ const jobs = [
             description: "Leading marketing strategies.",
             registration_date: "2023-03-12T12:00:00Z",
             job_opportunities_posted: 9,
-            candidates_hired: 40
+            candidates_hired: 40,
         },
         posted_on: "2024-07-04T12:00:00Z",
         work_type: "Hybrid",
@@ -203,9 +203,9 @@ const jobs = [
         salary_or_stipend: "19",
         apply_by: "2024-07-25T12:00:00Z",
         applicants_count: 160,
-        skills_required: ['SEO', 'Content Marketing', 'Google Analytics'],
+        skills_required: ["SEO", "Content Marketing", "Google Analytics"],
         openings: 1,
-        perks: ['Hybrid work', 'Paid time off']
+        perks: ["Hybrid work", "Paid time off"],
     },
     {
         id: "9",
@@ -218,7 +218,7 @@ const jobs = [
             description: "Securing network infrastructures.",
             registration_date: "2023-02-25T12:00:00Z",
             job_opportunities_posted: 6,
-            candidates_hired: 55
+            candidates_hired: 55,
         },
         posted_on: "2024-06-29T12:00:00Z",
         work_type: "Work From Office",
@@ -229,9 +229,9 @@ const jobs = [
         salary_or_stipend: "8",
         apply_by: "2024-07-15T12:00:00Z",
         applicants_count: 190,
-        skills_required: ['Cisco', 'Firewall', 'VPN'],
+        skills_required: ["Cisco", "Firewall", "VPN"],
         openings: 4,
-        perks: ['Health insurance', 'Retirement plan']
+        perks: ["Health insurance", "Retirement plan"],
     },
     {
         id: "10",
@@ -244,7 +244,7 @@ const jobs = [
             description: "Protecting digital assets.",
             registration_date: "2023-11-30T12:00:00Z",
             job_opportunities_posted: 7,
-            candidates_hired: 75
+            candidates_hired: 75,
         },
         posted_on: "2024-07-02T12:00:00Z",
         work_type: "Remote",
@@ -255,9 +255,9 @@ const jobs = [
         salary_or_stipend: "24",
         apply_by: "2024-07-18T12:00:00Z",
         applicants_count: 230,
-        skills_required: ['Security', 'SIEM', 'Incident Response'],
+        skills_required: ["Security", "SIEM", "Incident Response"],
         openings: 3,
-        perks: ['Remote work', 'Health insurance']
+        perks: ["Remote work", "Health insurance"],
     },
     {
         id: "11",
@@ -270,9 +270,9 @@ const jobs = [
             description: "Leading product development.",
             registration_date: "2024-01-20T12:00:00Z",
             job_opportunities_posted: 5,
-            candidates_hired: 45
+            candidates_hired: 45,
         },
-        posted_on: "2024-07-05T12:00:00Z",
+        posted_on: "2024-07-01T12:00:00Z",
         work_type: "Hybrid",
         location: "Atlanta, GA",
         description: "Managing product lifecycles.",
@@ -281,9 +281,9 @@ const jobs = [
         salary_or_stipend: "40",
         apply_by: "2024-07-22T12:00:00Z",
         applicants_count: 210,
-        skills_required: ['Product Management', 'Agile', 'Scrum'],
+        skills_required: ["Product Management", "Agile", "Scrum"],
         openings: 2,
-        perks: ['Hybrid work', 'Stock options']
+        perks: ["Hybrid work", "Stock options"],
     },
     {
         id: "12",
@@ -296,7 +296,7 @@ const jobs = [
             description: "Maintaining IT infrastructure.",
             registration_date: "2023-04-15T12:00:00Z",
             job_opportunities_posted: 8,
-            candidates_hired: 65
+            candidates_hired: 65,
         },
         posted_on: "2024-06-20T12:00:00Z",
         work_type: "Work From Office",
@@ -307,12 +307,10 @@ const jobs = [
         salary_or_stipend: "32",
         apply_by: "2024-07-10T12:00:00Z",
         applicants_count: 170,
-        skills_required: ['Linux', 'Windows Server', 'Networking'],
+        skills_required: ["Linux", "Windows Server", "Networking"],
         openings: 3,
-        perks: ['Health insurance', 'Paid time off']
-    }
+        perks: ["Health insurance", "Paid time off"],
+    },
 ];
 
-const colorCodes = ['bg-red-100','bg-orange-100','bg-lime-100','bg-green-100','bg-cyan-100','bg-blue-100']
-
-export {jobs, colorCodes};
+export { jobs };

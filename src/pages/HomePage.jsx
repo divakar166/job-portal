@@ -2,7 +2,8 @@
 import Hero from "../components/Hero";
 import HomeCards from "../components/HomeCards";
 import JobListings from "../components/JobListings";
-// import ViewAll from "../components/ViewAll";
+import SubscribeSection from "../components/SubscribeSection";
+import ViewAll from "../components/common/ViewAll";
 
 const HomePage = () => {
   return (
@@ -10,8 +11,8 @@ const HomePage = () => {
       <Hero />
       <HomeCards />
       <JobListings isHome={true} />
-      {/* <ViewAll />
-        <Footer /> */}
+      <ViewAll />
+      <SubscribeSection />
     </div>
   );
 };
