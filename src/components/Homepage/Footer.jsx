@@ -1,6 +1,5 @@
-import logo from "../assets/images/logo-black.png";
+import logo from "../common/logo-black.png";
 import {
-  FaFacebook,
   FaTwitter,
   FaGithub,
   FaLinkedin,

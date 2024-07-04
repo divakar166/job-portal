@@ -1,26 +1,29 @@
-import Spinner from "./common/Spinner";
+import Spinner from "../common/Spinner";
 import { useState, useEffect } from "react";
-import { jobs } from "../utils/data";
-import Card from "./common/Card";
+import { jobs } from "../common/data";
+import Card from "../common/Card";
 
-const RecommendedJobsSection = ({ doSlice }) => {
+const NewJobsSection = ({ doSlice }) => {
     const [loading, setLoading] = useState(true);
     const [jobsData, setJobsData] = useState([]);
 
     useEffect(() => {
         const fetchJobs = async () => {
-            let recommendedJobs;
+            // Sort the jobs array by posted_on date in descending order and slice the first 6 jobs
+            let newJobs;
             if (doSlice) {
-                recommendedJobs = jobs
-                    .sort((a, b) => b.applicants_count - a.applicants_count)
+                newJobs = jobs
+                    .sort(
+                        (a, b) => new Date(b.posted_on) - new Date(a.posted_on),
+                    )
                     .slice(0, 6);
             } else {
-                recommendedJobs = jobs.sort(
-                    (a, b) => b.applicants_count - a.applicants_count,
+                newJobs = jobs.sort(
+                    (a, b) => new Date(b.posted_on) - new Date(a.posted_on),
                 );
             }
 
-            setJobsData(recommendedJobs);
+            setJobsData(newJobs);
             setLoading(false);
         };
         fetchJobs();
@@ -41,4 +44,4 @@ const RecommendedJobsSection = ({ doSlice }) => {
     );
 };
 
-export default RecommendedJobsSection;
+export default NewJobsSection;

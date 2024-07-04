@@ -1,9 +1,11 @@
-import Hero from "../components/Hero";
-import HomeCards from "../components/HomeCards";
-import JobListings from "../components/JobListings";
-import SubscribeSection from "../components/SubscribeSection";
-import ViewAll from "../components/common/ViewAll";
-import Footer from "../components/Footer";
+import {
+  Hero,
+  HomeCards,
+  JobListings,
+  ViewAll,
+  SubscribeSection,
+  Footer,
+} from "../components/Homepage";
 
 const HomePage = () => {
   return (
