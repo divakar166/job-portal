@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import logo from "../common/logo-black.png";
 
 const Navbar = () => {
   const linkClass = ({ isActive }) =>
@@ -16,7 +15,7 @@ const Navbar = () => {
                   href="/"
                   className="w-8 h-8 hover:rotate-45 transition-all ease-in-out"
                 >
-                  <img src={logo} height={100} width={100} alt="Logo" />
+                  <img src="/logo.png" height={100} width={100} alt="Logo" />
                 </a>
               </div>
             </NavLink>
@@ -39,7 +38,7 @@ const Navbar = () => {
             <div className="md:ml-auto">
               <div className="flex space-x-2">
                 <NavLink
-                  to="/"
+                  to="/auth"
                   className="bg-purple-500 hover:bg-purple-600 p-2 px-3 text-white rounded-full"
                 >
                   Join with Us!

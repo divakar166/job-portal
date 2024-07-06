@@ -1,10 +1,14 @@
 import { Outlet } from "react-router-dom";
-import { Navbar } from "../components/Homepage";
+import Navbar from "../components/common/Navbar";
+import { useLocation } from "react-router-dom";
 
 const MainLayout = () => {
+  const location = useLocation();
+  const isAuthPage =
+    location.pathname === "/auth" || location.pathname === "/auth/";;
   return (
     <div className="">
-      <Navbar />
+      {!isAuthPage && <Navbar />}
       <Outlet />
     </div>
   );

@@ -1,4 +1,3 @@
-import logo from "../common/logo-black.png";
 import {
   FaTwitter,
   FaGithub,
@@ -18,7 +17,7 @@ const Footer = () => {
               href="/"
               className="w-8 h-8 hover:rotate-45 transition-all ease-in-out"
             >
-              <img src={logo} height={100} width={100} alt="Logo" />
+              <img src="logo.png" height={100} width={100} alt="Logo" />
             </a>
           </div>
         </div>
