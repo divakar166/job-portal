@@ -4,16 +4,18 @@
 @tailwind utilities;
 
 * {
-    font-family: 'Inter';
+  font-family: 'Inter';
 }
 
 a {
   text-decoration: none;
 }
+
 .menu__link {
   color: #000;
   position: relative;
 }
+
 .menu__link::before {
   content: '';
   width: 0;
@@ -25,6 +27,7 @@ a {
   right: 0;
   transition: right .4s, width .4s, left .4s;
 }
+
 .menu__link:hover::before {
   width: 100%;
   left: 0;

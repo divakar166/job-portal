@@ -1,3 +1,4 @@
+
 const CompaniesAuth = () => {
   return (
     <section className="w-1/2 bg-gradient-to-b from-slate-100 to-purple-300 flex justify-center items-center">
