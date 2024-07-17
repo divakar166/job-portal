@@ -1,6 +1,11 @@
 import { NavLink } from "react-router-dom";
+import Logo from "./Logo";
+import {useContext} from 'react';
+import { AuthContext } from '../../context/AuthContext';
+
 
 const Navbar = () => {
+  const { user, userType, logout } = useContext(AuthContext);
   const linkClass = ({ isActive }) =>
     isActive ? "h-full border-b-purple-500 border-b-2" : "menu__link h-full";
 
@@ -15,13 +20,7 @@ const Navbar = () => {
                   href="/"
                   className="w-8 h-8 flex items-center justify-center transform group-hover:rotate-45 transition-all ease-in-out"
                 >
-                  <img
-                    src="/logo.png"
-                    height={100}
-                    width={100}
-                    className="logo"
-                    alt="Logo"
-                  />
+                  <Logo />
                 </a>
                 <span className="absolute font-bold text-lg left-full top-1/2 transform -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
                   Connect
@@ -46,12 +45,30 @@ const Navbar = () => {
             </div>
             <div className="md:ml-auto">
               <div className="flex space-x-2">
-                <NavLink
+                {/* <NavLink
                   to="/auth"
                   className="bg-purple-500 hover:bg-purple-600 p-2 px-3 text-white rounded-full"
                 >
                   Join with Us!
-                </NavLink>
+                </NavLink> */}
+                {user ? (
+                    <div className="flex items-center space-x-2">
+                      <span>Welcome, {user.name}!</span>
+                      <button
+                        onClick={logout}
+                        className="bg-red-500 hover:bg-red-600 p-2 px-3 text-white rounded-full"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  ) : (
+                    <NavLink
+                      to="/auth"
+                      className="bg-purple-500 hover:bg-purple-600 p-2 px-3 text-white rounded-full"
+                    >
+                      Join with Us!
+                    </NavLink>
+                  )}
               </div>
             </div>
           </div>

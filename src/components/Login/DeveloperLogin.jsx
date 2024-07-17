@@ -1,57 +1,46 @@
+import { useState, useContext } from 'react';
+import axios from '../../api/axios';
+import { AuthContext } from '../../context/AuthContext';
+import Label from '../common/Label';
+import Logo from '../common/Logo';
+
 const DeveloperLogin = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+  const { login } = useContext(AuthContext);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/developers/login', formData);
+      const { developer, token } = response.data;
+      login(developer, 'developer', token);
+      localStorage.setItem('token', token);
+      localStorage.setItem('userType', 'developers');
+      alert('Login successful!');
+    } catch (error) {
+      console.error('There was an error logging in!', error);
+    }
+  };
   return (
     <div className="h-[80vh] mx-10 mt-5 flex justify-center items-center">
       <div className="border border-1 h-full w-4/5 flex justify-center">
         <div className="w-1/2 h-full flex flex-col justify-center items-center">
           <div className="w-6 h-6 flex items-center justify-center">
-            <img
-              src="/logo.png"
-              height={100}
-              width={100}
-              className="logo"
-              alt="Logo"
-            />
+            <Logo />
             <span className="pl-2 font-bold">Connect</span>
           </div>
           <div className="text-center my-4">
             <p className="text-xl font-bold">Welcome Back</p>
             <p className="text-sm text-slate-500">Please enter your details</p>
           </div>
-          <form className="w-3/5">
-            <div>
-              <label
-                for="email"
-                class="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Email
-              </label>
-              <div class="relative mt-2 rounded-md shadow-sm">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900  placeholder:text-gray-400 sm:text-sm sm:leading-6 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-500 outline-none"
-                  placeholder="josh@email.com"
-                />
-              </div>
-            </div>
-            <div>
-              <label
-                for="email"
-                class="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Password
-              </label>
-              <div class="rounded-md shadow-sm">
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  class="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900  placeholder:text-gray-400 sm:text-sm sm:leading-6 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-500 outline-none"
-                  placeholder="Shh...it's secret"
-                />
-              </div>
-            </div>
+          <form className="w-3/5" onSubmit={handleSubmit}>
+            <Label type="email" name="Email" placeholder="josh@email.com" value={formData.email} onChange={handleChange} />
+            <Label type="password" name="Password" placeholder="Shh...it's secret" value={formData.password} onChange={handleChange} />
             <div className="flex justify-between mt-4">
               <div class="flex items-center mb-4">
                 <input

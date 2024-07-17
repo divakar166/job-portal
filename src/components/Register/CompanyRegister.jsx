@@ -1,4 +1,6 @@
 import Label from "../common/Label";
+import Logo from "../common/Logo";
+
 const CompanyRegister = () => {
   return (
     <div className="h-[80vh] mx-10 mt-5 flex justify-center items-center">
@@ -8,13 +10,7 @@ const CompanyRegister = () => {
         </div>
         <div className="w-1/2 h-full flex flex-col justify-center items-center">
           <div className="w-6 h-6 flex items-center justify-center">
-            <img
-              src="/logo.png"
-              height={100}
-              width={100}
-              className="logo"
-              alt="Logo"
-            />
+            <Logo />
           </div>
           <div className="text-center my-4">
             <p className="text-xl font-bold">
@@ -56,8 +52,8 @@ const CompanyRegister = () => {
           </form>
           <div className="text-sm text-gray-500 mt-2">
             Don't have an account?{" "}
-            <a href="./register" className="underline text-black">
-              Register
+            <a href="./login" className="underline text-black">
+              Login
             </a>
           </div>
         </div>

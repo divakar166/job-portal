@@ -1,16 +1,12 @@
+import Logo from "../common/Logo";
+
 const CompanyLogin = () => {
   return (
     <div className="h-[80vh] mx-10 mt-5 flex justify-center items-center">
       <div className="border border-1 h-full w-4/5 flex justify-center">
         <div className="w-1/2 h-full flex flex-col justify-center items-center">
           <div className="w-6 h-6 flex items-center justify-center">
-            <img
-              src="/logo.png"
-              height={100}
-              width={100}
-              className="logo"
-              alt="Logo"
-            />
+            <Logo />
             <span className="pl-2 font-bold">Connect</span>
           </div>
           <div className="text-center my-4">
