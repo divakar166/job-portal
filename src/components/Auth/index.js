@@ -1,2 +1,2 @@
-export { default as CompaniesAuthSection } from "./CompaniesAuth.jsx";
-export { default as DevelopersAuthSection } from "./DevelopersAuth.jsx";
+export { default as UserSignUp } from "./UserSignUp.jsx";
+export { default as UserSignIn } from "./UserSignIn.jsx";

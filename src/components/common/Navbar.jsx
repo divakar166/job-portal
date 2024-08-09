@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "./Logo";
 import {useContext} from 'react';
 import { AuthContext } from '../../context/AuthContext';
-
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 const Navbar = () => {
   const { user, userType, logout } = useContext(AuthContext);
@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="bg-white dark:bg-black border-b border-slate-300 dark:border-neutral-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <div className="flex flex-1 items-center justify-around md:items-stretch md:justify-start">
+          <div className="flex flex-1 items-center justify-between md:items-stretch md:justify-start">
             <div className="flex flex-shrink-0 items-center mr-4 logo-container group">
               <div className="rounded-full bg-white flex justify-center items-center relative group">
                 <a
@@ -51,7 +51,18 @@ const Navbar = () => {
                 >
                   Join with Us!
                 </NavLink> */}
-                {user ? (
+                <SignedOut>
+                  <Link
+                    to="/sign-in"
+                    className="bg-purple-500 hover:bg-purple-600 p-2 px-3 text-white rounded-full"
+                  >
+                    Join with Us!
+                  </Link>
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+                {/* {user ? (
                     <div className="flex items-center space-x-2">
                       <span>Welcome, {user.name}!</span>
                       <button
@@ -68,7 +79,7 @@ const Navbar = () => {
                     >
                       Join with Us!
                     </NavLink>
-                  )}
+                  )} */}
               </div>
             </div>
           </div>
