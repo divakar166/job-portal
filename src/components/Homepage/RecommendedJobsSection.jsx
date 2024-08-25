@@ -1,7 +1,9 @@
 import Spinner from "../common/Spinner";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { jobs } from "../common/data";
 import Card from "../common/Card";
+import { motion,useScroll, useTransform } from "framer-motion";
+
 
 const RecommendedJobsSection = ({ doSlice }) => {
     const [loading, setLoading] = useState(true);
@@ -24,16 +26,16 @@ const RecommendedJobsSection = ({ doSlice }) => {
             setLoading(false);
         };
         fetchJobs();
-    }, []);
+    }, [doSlice]);
 
     return (
         <div>
             {loading ? (
                 <Spinner />
             ) : (
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {jobsData.map((job, index) => (
-                        <Card key={index} job={job} />
+                        <Card job={job} key={index} />
                     ))}
                 </div>
             )}

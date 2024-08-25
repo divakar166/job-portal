@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "./Logo";
 import {useContext} from 'react';
 import { AuthContext } from '../../context/AuthContext';
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 const Navbar = () => {
   const { user, userType, logout } = useContext(AuthContext);
@@ -45,24 +44,7 @@ const Navbar = () => {
             </div>
             <div className="md:ml-auto">
               <div className="flex space-x-2">
-                {/* <NavLink
-                  to="/auth"
-                  className="bg-purple-500 hover:bg-purple-600 p-2 px-3 text-white rounded-full"
-                >
-                  Join with Us!
-                </NavLink> */}
-                <SignedOut>
-                  <Link
-                    to="/sign-in"
-                    className="bg-purple-500 hover:bg-purple-600 p-2 px-3 text-white rounded-full"
-                  >
-                    Join with Us!
-                  </Link>
-                </SignedOut>
-                <SignedIn>
-                  <UserButton />
-                </SignedIn>
-                {/* {user ? (
+                {user ? (
                     <div className="flex items-center space-x-2">
                       <span>Welcome, {user.name}!</span>
                       <button
@@ -79,7 +61,7 @@ const Navbar = () => {
                     >
                       Join with Us!
                     </NavLink>
-                  )} */}
+                  )}
               </div>
             </div>
           </div>

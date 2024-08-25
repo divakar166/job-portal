@@ -13,6 +13,7 @@
     "@fontsource/inter": "^5.0.18",
     "axios": "^1.7.2",
     "date-fns": "^3.6.0",
+    "framer-motion": "^11.3.28",
     "json-server": "^1.0.0-beta.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
