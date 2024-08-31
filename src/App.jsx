@@ -9,7 +9,7 @@ import MainLayout from "./layout/MainLayout";
 import JobsPage from "./pages/JobsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import AuthProvider from './context/AuthContext';
-import { UserSignIn, UserSignUp } from "./components/Auth";
+import { Login, Register } from './components/Auth';
 
 const App = () => {
   const router = createBrowserRouter(
@@ -18,8 +18,8 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path="/jobs" element={<JobsPage />} />
         <Route path="*" element={<NotFoundPage />} />
-        <Route path="/sign-in" element={<UserSignIn />} />
-        <Route path="/sign-up" element={<UserSignUp />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Route>,
     ),
   );

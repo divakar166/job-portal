@@ -1,2 +1,2 @@
-export { default as UserSignUp } from "./UserSignUp.jsx";
-export { default as UserSignIn } from "./UserSignIn.jsx";
+export { default as Login } from "./Login.jsx";
+export { default as Register } from "./Register.jsx";
