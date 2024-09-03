@@ -1,7 +1,7 @@
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const DeveleporDiv = () => {
+const DeveloperDiv = () => {
   return (
     <div className="w-1/2 p-5 h-full flex justify-center items-center">
         <div
@@ -42,4 +42,4 @@ const DeveleporDiv = () => {
   )
 }
 
-export default DeveleporDiv
+export default DeveloperDiv;

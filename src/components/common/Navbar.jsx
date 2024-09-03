@@ -56,7 +56,7 @@ const Navbar = () => {
                     </div>
                   ) : (
                     <NavLink
-                      to="/register"
+                      to="/auth/register"
                       className="bg-purple-500 hover:bg-purple-600 p-2 px-3 text-white rounded-full"
                     >
                       Join with Us!

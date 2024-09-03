@@ -9,7 +9,7 @@ import MainLayout from "./layout/MainLayout";
 import JobsPage from "./pages/JobsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import AuthProvider from './context/AuthContext';
-import { Login, Register } from './components/Auth';
+import { DeveloperVerify, Login, Register } from './components/Auth';
 
 const App = () => {
   const router = createBrowserRouter(
@@ -18,8 +18,9 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path="/jobs" element={<JobsPage />} />
         <Route path="*" element={<NotFoundPage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/auth/register" element={<Register />} />
+        <Route path="/auth/login" element={<Login />} />
+        <Route path="/auth/developer/verify/:token" element={<DeveloperVerify />} />
       </Route>,
     ),
   );

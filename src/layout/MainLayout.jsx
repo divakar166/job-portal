@@ -4,7 +4,7 @@ import AuthNav from "../components/common/AuthNav";
 
 const MainLayout = () => {
   const location = useLocation();
-  const isAuthPage = location.pathname.startsWith("/register" || '/login');
+  const isAuthPage = location.pathname.startsWith("/auth");
   return (
     <div className="min-h-screen">
       {!isAuthPage && <Navbar />}
