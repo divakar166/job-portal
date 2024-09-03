@@ -13,17 +13,14 @@ const Footer = () => {
       {/* <div>Made by <a href="https://github.com/divakar166" className="text-lg font-bold bg-gradient-to-b from-[#870000] to-[#190A05] dark:bg-gradient-to-r dark:from-[#c471f5] dark:to-[#fa71cd] bg-clip-text" style={{"-webkit-text-fill-color":"transparent"}}>Divakar Singh</a></div> */}
       <div className="flex justify-around items-center w-full pb-4 mb-10 border-b">
         <div className="w-[10%] ">
-          <div className="h-10 w-10 rounded-full bg-white flex justify-center items-center relative group">
-            <a
-              href="/"
-              className="w-8 h-8 flex items-center justify-center transform group-hover:rotate-45 transition-all ease-in-out"
-            >
+          <Link href='/' className="rounded-full bg-white flex justify-center items-center relative">
+            <div className="w-8 h-8 flex items-center justify-center" >
               <Logo />
-            </a>
-            <span className="absolute font-bold text-lg left-full top-1/2 transform -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+            </div>
+            <span className="font-bold text-lg ml-2">
               Connect
             </span>
-          </div>
+          </Link>
         </div>
         <div className="flex justify-around items-center w-1/2">
           <Link className="menu__link" to="/jobs">
@@ -73,7 +70,6 @@ const Footer = () => {
         <div className="flex justify-around items-center w-1/3 ">
           <Link className="hover:text-black">Terms of Service</Link>
           <Link className="hover:text-black">Privacy Policy</Link>
-          <Link className="hover:text-black">Partners</Link>
         </div>
       </div>
     </div>

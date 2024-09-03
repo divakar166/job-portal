@@ -14,17 +14,14 @@ const Navbar = () => {
         <div className="flex h-20 items-center justify-between">
           <div className="flex flex-1 items-center justify-between md:items-stretch md:justify-start">
             <div className="flex flex-shrink-0 items-center mr-4 logo-container group">
-              <div className="rounded-full bg-white flex justify-center items-center relative group">
-                <a
-                  href="/"
-                  className="w-8 h-8 flex items-center justify-center transform group-hover:rotate-45 transition-all ease-in-out"
-                >
+              <Link href='/' className="rounded-full bg-white flex justify-center items-center relative">
+                <div className="w-8 h-8 flex items-center justify-center" >
                   <Logo />
-                </a>
-                <span className="absolute font-bold text-lg left-full top-1/2 transform -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+                </div>
+                <span className="font-bold text-lg ml-2">
                   Connect
                 </span>
-              </div>
+              </Link>
             </div>
             <div className="md:ml-auto md:flex items-center hidden">
               <div className="flex space-x-4 items-center">

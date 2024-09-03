@@ -65,10 +65,9 @@ const Hero = () => {
                         animate={{ y:0 }}
                         transition={{
                             type: "spring",
-                            stiffness:260,
-                            damping:20,
+                            stiffness:100,
+                            damping:10,
                             repeat: Infinity
-                            
                         }}
                     >
                         <TfiAngleDoubleDown className="text-4xl text-slate-400" />
