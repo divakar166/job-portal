@@ -5,6 +5,7 @@ import CompanyDiv from "./CompanyDiv";
 import InputField from "../common/InputField";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UserTypeRadioGroup from "../common/UserTypeRadioGroup";
 
 const Login = () => {
   const [currentUserType, setCurrentUserType] = useState('developer');
@@ -51,37 +52,14 @@ const Login = () => {
       {currentUserType == 'developer' ? <DeveloperDiv type="login" /> : <CompanyDiv type="login" />}
       <div className="w-1/2 flex justify-center items-center">
         <div className="w-2/3 h-full bg-cover bg-center rounded-lg">
-          <div className="text-4xl text-slate-700 my-5">Welcome Back!</div>
+          <div className="text-4xl text-white my-5">Welcome Back!</div>
           <div className="text-md my-4">Don't have an account? <Link to='/auth/register' className="underline hover:text-purple-500">Register</Link></div>
           <form onSubmit={handleSubmit}>
-            <div className="flex grid-rows-2 justify-around items-center w-full">
-              <label 
-                className={`${activeStyle('developer')} mr-2`}
-              >
-                <input 
-                  type="radio" 
-                  name="userType" 
-                  value="developer" 
-                  className="hidden"
-                  checked={currentUserType === 'developer'}
-                  onChange={() => setCurrentUserType('developer')}
-                />
-                Developer
-              </label>
-              <label 
-                className={activeStyle('company')}
-              >
-                <input 
-                  type="radio" 
-                  name="userType" 
-                  value="company" 
-                  className="hidden"
-                  checked={currentUserType === 'company'}
-                  onChange={() => setCurrentUserType('company')}
-                />
-                Company
-              </label>
-            </div>
+            <UserTypeRadioGroup 
+              currentUserType={currentUserType} 
+              setCurrentUserType={setCurrentUserType} 
+              activeStyle={activeStyle} 
+            />
             <div className="my-2">
               <div>
                 <InputField 
@@ -106,6 +84,27 @@ const Login = () => {
                 />
               </div>
             </div>
+            <div className="flex items-center justify-between my-1">
+                <div class="flex items-center pt-1 mb-2">
+                  <input 
+                    id="link-checkbox" 
+                    type="checkbox" 
+                    value="" 
+                    className="w-4 h-4 border-purple-500 focus:ring-2 focus:ring-purple-600 focus:ring-inset outline-none bg-purple-500 text-purple-500 checked:bg-purple-500"
+                  />
+                  <label 
+                    htmlFor="link-checkbox" 
+                    className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >
+                    Remember Me
+                  </label>
+                </div>
+                <div className="text-md">
+                  <a href="/auth/developer/forgot-password" className="font-semibold text-purple-600 hover:text-purple-500">
+                    Forgot password?
+                  </a>
+                </div>
+              </div>
             <button type="submit" className="w-full bg-purple-600 hover:bg-purple-500 text-white text-center py-3 rounded-lg">Login</button>
           </form>
         </div>

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import InputField from '../common/InputField';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UserTypeRadioGroup from "../common/UserTypeRadioGroup";
 
 const Register = () => {
   const [currentUserType, setCurrentUserType] = useState('developer');
@@ -76,34 +77,11 @@ const Register = () => {
           <div className="text-4xl text-white my-2 text-left w-full">Create an account</div>
           <div className="text-md  mb-4 w-full text-left">Already have an account? <Link to='/auth/login' className="underline hover:text-purple-500">Login</Link></div>
           <form onSubmit={handleSubmit} className="w-full">
-            <div className="flex grid-rows-2 justify-around items-center w-full">
-              <label 
-                className={`${activeStyle('developer')} mr-2`}
-              >
-                <input 
-                  type="radio" 
-                  name="userType" 
-                  value="developer" 
-                  className="hidden"
-                  checked={currentUserType === 'developer'}
-                  onChange={() => setCurrentUserType('developer')}
-                />
-                Developer
-              </label>
-              <label 
-                className={activeStyle('company')}
-              >
-                <input 
-                  type="radio" 
-                  name="userType" 
-                  value="company" 
-                  className="hidden"
-                  checked={currentUserType === 'company'}
-                  onChange={() => setCurrentUserType('company')}
-                />
-                Company
-              </label>
-            </div>
+            <UserTypeRadioGroup 
+              currentUserType={currentUserType} 
+              setCurrentUserType={setCurrentUserType} 
+              activeStyle={activeStyle} 
+            />
             <div className="flex grid-rows-2 justify-between items-center my-2">
               <div className="mr-2 w-full">
                 <InputField 
@@ -150,14 +128,21 @@ const Register = () => {
                 />
               </div>
             </div>
-            <div className="relative flex gap-x-2 mb-2">
-                <div className="flex h-6 items-center">
-                  <input id="termsconditions" name="termsconditions" type="checkbox" className="h-4 w-4 rounded border-purple-300 text-purple-600 focus:ring-purple-600" />
-                </div>
-                <div className="text-sm leading-6">
-                  <label className="font-medium text-gray-500">I agree to the <a className="text-purple-500 font-bold">Terms & Conditions</a></label>
-                </div>
-              </div>
+            <div class="flex items-center pt-1 mb-2">
+              <input 
+                id="link-checkbox" 
+                type="checkbox" 
+                value="" 
+                className="w-4 h-4 border-purple-500 focus:ring-2 focus:ring-purple-600 focus:ring-inset outline-none bg-purple-500 text-purple-500 checked:bg-purple-500"
+              />
+              <label 
+                htmlFor="link-checkbox" 
+                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >
+                I agree with the  &nbsp;
+                <a href="#" className="text-purple-600 hover:underline">terms and conditions</a>.
+              </label>
+            </div>
             <button type="submit" className="w-full bg-purple-600 hover:bg-purple-500 border border-purple-500 focus:ring-2 focus:ring-inset focus:ring-purple-600 outline-none text-lg text-white text-center py-3 rounded-lg">{submitBtn}</button>
           </form>
         </div>
