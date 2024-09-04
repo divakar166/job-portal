@@ -1,15 +1,16 @@
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const CompanyDiv = () => {
+const CompanyDiv = ({ type }) => {
+  const url = type === 'register' ? "url('/company_register.svg')" : "url('/company_login.svg')";
   return (
     <div className="w-1/2 p-5 h-full flex justify-center items-center border-1 border-black">
         <div
-          className="w-full h-full bg-cover bg-center rounded-lg"
-          style={{ backgroundImage: "url('/company_bg.jpg')" }}
+          className="w-full h-full bg-cover bg-center rounded-lg border relative"
+          style={{ backgroundImage: url }}
         >
-          <div className="inset-0 bg-black opacity-30 rounded-lg"></div>
-          <div className="flex justify-between items-center px-4 py-5 logo-container  ">
+          <div className="inset-0 bg-black opacity-10 rounded-lg h-full"></div>
+          <div className="flex absolute top-0 w-full justify-between items-center px-4 py-5 logo-container z-10">
             <div className="rounded-full flex justify-center items-center relative group group w-10">
               <a
                 href="/"
@@ -22,7 +23,7 @@ const CompanyDiv = () => {
                   className="logo"
                   alt="Logo"
                 />
-                <span className="absolute text-white font-bold text-lg left-full top-1/2 transform -translate-y-1/2  opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 cursor-pointer">
+                <span className="absolute text-white font-bold text-lg left-full pl-2 top-1/2 transform -translate-y-1/2 cursor-pointer hover:text-purple-300">
                   Connect
                 </span>
               </a>

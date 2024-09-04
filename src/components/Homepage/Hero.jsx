@@ -9,7 +9,7 @@ const Hero = () => {
                 <div className="text-center flex justify-center items-center flex-col">
                     <motion.h1
                         className="text-4xl font-black sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-clip-text bg-gradient-to-b from-[#555] to-[#000] dark:bg-gradient-to-b dark:from-[#fff] dark:to-[#adadad]"
-                        style={{ "-webkit-text-fill-color": "transparent" }}
+                        style={{ WebkitTextFillColor: "transparent" }}
                         initial={{ y:100, opacity:0 }}
                         animate={{ y:0, opacity:1 }}
                         transition={{

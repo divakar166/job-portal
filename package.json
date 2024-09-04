@@ -11,7 +11,7 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.4.0",
     "@fontsource/inter": "^5.0.18",
-    "axios": "^1.7.2",
+    "axios": "^1.7.7",
     "date-fns": "^3.6.0",
     "framer-motion": "^11.3.28",
     "json-server": "^1.0.0-beta.1",

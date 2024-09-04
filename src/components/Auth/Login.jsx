@@ -48,7 +48,7 @@ const Login = () => {
   }
   return (
     <section className="w-screen h-screen bg-gradient-to-r from-violet-300 to-violet-200  flex justify-center items-center">
-      {currentUserType == 'developer' ? <DeveloperDiv /> : <CompanyDiv />}
+      {currentUserType == 'developer' ? <DeveloperDiv type="login" /> : <CompanyDiv type="login" />}
       <div className="w-1/2 flex justify-center items-center">
         <div className="w-2/3 h-full bg-cover bg-center rounded-lg">
           <div className="text-4xl text-slate-700 my-5">Welcome Back!</div>

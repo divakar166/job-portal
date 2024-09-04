@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from 'axios';
 import DeveloperDiv from "./DeveloperDiv";
 import CompanyDiv from "./CompanyDiv";
 import { Link } from "react-router-dom";
@@ -8,6 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const [currentUserType, setCurrentUserType] = useState('developer');
+  const [submitBtn, setSubmitBtn] = useState('Create Account');
+  const [redirect, setRedirect] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -24,26 +27,33 @@ const Register = () => {
   const activeStyle = (userType) =>  `border w-full text-center px-4 py-2  rounded-lg cursor-pointer sm:text-sm lg:text-lg ${ userType === currentUserType ? 'border-purple-700 bg-purple-600 text-white' : 'border-purple-500'}`;
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.password) {
+      toast.error('All fields are required');
+      return;
+    }
     try {
       const endpoint = currentUserType === 'developer' ? '/api/developers/register' : '/api/companies/register';
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
-        method: 'POST',
+      
+      setSubmitBtn("Creating...");
+  
+      const response = await axios.post(`/backend${endpoint}`, formData, {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
       });
   
-      const result = await response.json();
-  
-      if (response.ok) {
+      const result = response.data;
+      console.log(response.status)
+      if (response.status === 201) {
         setFormData({
           firstName: '',
           lastName: '',
           email: '',
           password: '',
         });
-        toast.success(result.msg)
+        toast.success(result.msg);
+        setSubmitBtn("Created");
+        setRedirect(true);
         setTimeout(() => {
           window.location.href = '/auth/login';
         }, 3000); 
@@ -51,12 +61,16 @@ const Register = () => {
         toast.error(result.msg);
       }
     } catch (error) {
-      toast.error('Registration failed. Please try again later.');
+      setSubmitBtn("Create Account")
+      if(error["response"].status == 500){
+        toast.error("Server error!")
+      }
+      toast.error(error["response"]["data"]["msg"]);
     }
-  }
+  };
   return (
     <section className="w-screen h-screen bg-gradient-to-r from-violet-300 to-violet-200  flex justify-center items-center">
-      {currentUserType == 'developer' ? <DeveloperDiv /> : <CompanyDiv />}
+      {currentUserType == 'developer' ? <DeveloperDiv type="register" /> : <CompanyDiv type="register" />}
       <div className="w-1/2 h-[80%] flex justify-center items-center">
         <div className="w-2/3 h-full bg-cover bg-center rounded-lg flex flex-col justify-center items-center">
           <div className="text-4xl text-white my-2 text-left w-full">Create an account</div>
@@ -144,10 +158,13 @@ const Register = () => {
                   <label className="font-medium text-gray-500">I agree to the <a className="text-purple-500 font-bold">Terms & Conditions</a></label>
                 </div>
               </div>
-            <button type="submit" className="w-full bg-purple-600 hover:bg-purple-500 text-lg text-white text-center py-3 rounded-lg">Create Account</button>
+            <button type="submit" className="w-full bg-purple-600 hover:bg-purple-500 border border-purple-500 focus:ring-2 focus:ring-inset focus:ring-purple-600 outline-none text-lg text-white text-center py-3 rounded-lg">{submitBtn}</button>
           </form>
         </div>
       </div>
+      {redirect && (<div className="inset-0 absolute top-0 bg-black opacity-50 z-20 flex justify-center items-center rounded-lg w-full h-full">
+        <div className="text-white text-xl">Redirecting...</div>
+      </div>)}
       <ToastContainer
         position="bottom-right"
         autoClose={5000}
