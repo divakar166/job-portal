@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/backend': {
-        target: 'http://localhost:5000',
+        target: 'https://job-portal-server-mu.vercel.app/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/backend/, ''),
       },
