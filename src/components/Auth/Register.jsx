@@ -128,7 +128,7 @@ const Register = () => {
                 />
               </div>
             </div>
-            <div class="flex items-center pt-1 mb-2">
+            <div className="flex items-center pt-1 mb-2">
               <input 
                 id="link-checkbox" 
                 type="checkbox" 

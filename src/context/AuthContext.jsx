@@ -1,23 +1,27 @@
 import React, { createContext, useState, useEffect } from 'react';
-import axios from '../api/axios';
 
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [userType, setUserType] = useState(null);
+  const [userType, setUserType] = useState(localStorage.getItem('userType') || null);
   const [token, setToken] = useState(localStorage.getItem('token') || null);
 
   useEffect(() => {
     const fetchUser = async () => {
-      const storedUserType = localStorage.getItem('userType');
-      if (token && storedUserType) {
+      if (token && userType) {
         try {
-          const response = await axios.get(`/${storedUserType}/profile`, {
+          const response = await fetch(`http://localhost:5000/api/${userType}s/profile`, {
             headers: { Authorization: `Bearer ${token}` },
           });
-          setUser(response.data);
-          setUserType(storedUserType);
+          if (response.ok) {
+            const data = await response.json();
+            setUser(data);
+          } else {
+            console.error('Failed to fetch user data');
+            logout();
+            location.href = '/'
+          }
         } catch (error) {
           console.error('Error fetching user data:', error);
         }
@@ -27,12 +31,11 @@ const AuthProvider = ({ children }) => {
     fetchUser();
   }, [token]);
 
-  const login = (userData, type, newToken) => {
-    setUser(userData);
-    setUserType(type);
-    setToken(newToken);
-    localStorage.setItem('token', newToken);
-    localStorage.setItem('userType', type);
+  const login = (token, userType) => {
+    setUserType(userType);
+    setToken(token);
+    localStorage.setItem('token', token);
+    localStorage.setItem('userType', userType);
   };
 
   const logout = () => {

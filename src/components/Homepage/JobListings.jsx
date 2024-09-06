@@ -10,15 +10,17 @@ const JobListings = ({ isHome = false }) => {
 	};
 
 	return (
-		<section className="bg-white dark:bg-black px-4 py-10">
+		<section className="bg-white dark:bg-black px-4 py-3">
 			<div className="container-xl lg:container m-auto">
-				<h2 className="text-lg text-slate-400 text-center">
-					Your Dream Job
-				</h2>
 				{isHome && (
-					<h1 className="text-5xl text-center text-black mb-4">
-						Explore and Find <br /> your Job here
-					</h1>
+					<>
+						<h2 className="text-lg text-slate-400 text-center">
+							Your Dream Job
+						</h2>
+						<h1 className="text-5xl text-center text-black mb-4">
+							Explore and Find <br /> your Job here
+						</h1>
+					</>
 				)}
 				<div className="flex justify-center items-center gap-x-4 py-4">
 					<div

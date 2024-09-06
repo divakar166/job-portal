@@ -4,12 +4,11 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import HomePage from "./pages/HomePage";
 import MainLayout from "./layout/MainLayout";
-import JobsPage from "./pages/JobsPage";
-import NotFoundPage from "./pages/NotFoundPage";
 import AuthProvider from './context/AuthContext';
 import { DeveloperVerify, Login, Register } from './components/Auth';
+import { HomePage, JobsPage, NotFoundPage} from './pages';
+import { DeveloperProfile } from './components/Developer';
 
 const App = () => {
   const router = createBrowserRouter(
@@ -21,6 +20,7 @@ const App = () => {
         <Route path="/auth/register" element={<Register />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/developer/verify/:token" element={<DeveloperVerify />} />
+        <Route path="/developer/profile" element={<DeveloperProfile />} />
       </Route>,
     ),
   );

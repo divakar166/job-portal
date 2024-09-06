@@ -2,12 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "./Logo";
 import {useContext} from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import ProfileAvatar from './ProfileAvatar';
 
 const Navbar = () => {
-  const { user, userType, logout } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   const linkClass = ({ isActive }) =>
     isActive ? "h-full border-b-purple-500 border-b-2" : "menu__link h-full";
-
   return (
     <nav className="bg-white dark:bg-black border-b border-slate-300 dark:border-neutral-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -43,13 +43,14 @@ const Navbar = () => {
               <div className="flex space-x-2">
                 {user ? (
                     <div className="flex items-center space-x-2">
-                      <span>Welcome, {user.name}!</span>
+                      {/* <span>Welcome, {user.name}!</span>
                       <button
                         onClick={logout}
                         className="bg-red-500 hover:bg-red-600 p-2 px-3 text-white rounded-full"
                       >
                         Logout
-                      </button>
+                      </button> */}
+                      <ProfileAvatar handleLogout={logout}  />
                     </div>
                   ) : (
                     <NavLink
