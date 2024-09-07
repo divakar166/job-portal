@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from 'axios';
 import DeveloperDiv from "./DeveloperDiv";
-import CompanyDiv from "./CompanyDiv";
+import RecruiterDiv from "./RecruiterDiv";
 import { Link } from "react-router-dom";
 import InputField from '../common/InputField';
 import { ToastContainer, toast } from 'react-toastify';
@@ -33,7 +33,7 @@ const Register = () => {
       return;
     }
     try {
-      const endpoint = currentUserType === 'developer' ? '/api/developers/register' : '/api/companies/register';
+      const endpoint = currentUserType === 'developer' ? '/api/developers/register' : '/api/recruiter/register';
       
       setSubmitBtn("Creating...");
   
@@ -71,7 +71,7 @@ const Register = () => {
   };
   return (
     <section className="w-screen h-screen bg-gradient-to-r from-violet-300 to-violet-200  flex justify-center items-center">
-      {currentUserType == 'developer' ? <DeveloperDiv type="register" /> : <CompanyDiv type="register" />}
+      {currentUserType == 'developer' ? <DeveloperDiv type="register" /> : <RecruiterDiv type="register" />}
       <div className="w-1/2 h-[80%] flex justify-center items-center">
         <div className="w-2/3 h-full bg-cover bg-center rounded-lg flex flex-col justify-center items-center">
           <div className="text-4xl text-white my-2 text-left w-full">Create an account</div>
@@ -82,28 +82,44 @@ const Register = () => {
               setCurrentUserType={setCurrentUserType} 
               activeStyle={activeStyle} 
             />
-            <div className="flex grid-rows-2 justify-between items-center my-2">
-              <div className="mr-2 w-full">
-                <InputField 
-                  type="text" 
-                  name="firstName" 
-                  id="first-name" 
-                  placeholder="First name"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="w-full">
-                <InputField 
-                  type="text" 
-                  name="lastName" 
-                  id="last-name" 
-                  placeholder="Last name" 
-                  value={formData.lastName}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
+            {currentUserType == 'developer' ? (
+                <div className="flex grid-rows-2 justify-between items-center my-2">
+                  <div className="mr-2 w-full">
+                    <InputField 
+                      type="text" 
+                      name="firstName" 
+                      id="first-name" 
+                      placeholder="First name"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="w-full">
+                    <InputField 
+                      type="text" 
+                      name="lastName" 
+                      id="last-name" 
+                      placeholder="Last name" 
+                      value={formData.lastName}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="my-2">
+                  <div className="mr-2 w-full">
+                    <InputField 
+                      type="text" 
+                      name="name" 
+                      id="name" 
+                      placeholder="Company Name"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+              )
+            }
             <div className="mb-2">
               <div>
                 <InputField 

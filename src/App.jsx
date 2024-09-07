@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import AuthProvider from './context/AuthContext';
-import { DeveloperVerify, Login, Register } from './components/Auth';
+import { DeveloperVerify, Login, RecruiterVerify, Register } from './components/Auth';
 import { HomePage, JobsPage, NotFoundPage} from './pages';
 import { DeveloperProfile } from './components/Developer';
 
@@ -20,6 +20,7 @@ const App = () => {
         <Route path="/auth/register" element={<Register />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/auth/developer/verify/:token" element={<DeveloperVerify />} />
+        <Route path="/auth/developer/verify/:token" element={<RecruiterVerify />} />
         <Route path="/developer/profile" element={<DeveloperProfile />} />
       </Route>,
     ),

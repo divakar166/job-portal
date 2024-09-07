@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DeveloperDiv from "./DeveloperDiv";
-import CompanyDiv from "./CompanyDiv";
+import RecruiterDiv from "./RecruiterDiv";
 import InputField from "../common/InputField";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -36,7 +36,7 @@ const Login = () => {
     setIsLoading(true);
     try {
       const endpoint = currentUserType === 'developer' ? '/api/developers/login' : '/api/companies/login';
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
+      const response = await fetch(`/backend/${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const Login = () => {
 
   return (
     <section className="w-screen h-screen bg-gradient-to-r from-violet-300 to-violet-200 flex justify-center items-center">
-      {currentUserType === 'developer' ? <DeveloperDiv type="login" /> : <CompanyDiv type="login" />}
+      {currentUserType === 'developer' ? <DeveloperDiv type="login" /> : <RecruiterDiv type="login" />}
       <div className="w-1/2 flex justify-center items-center">
         <div className="w-2/3 h-full bg-cover bg-center rounded-lg">
           <div className="text-4xl text-white my-5">Welcome Back!</div>

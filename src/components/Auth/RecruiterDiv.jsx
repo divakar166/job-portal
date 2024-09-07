@@ -1,8 +1,8 @@
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const CompanyDiv = ({ type }) => {
-  const url = type === 'register' ? "url('/company_register.svg')" : "url('/company_login.svg')";
+const RecruiterDiv = ({ type }) => {
+  const url = type === 'register' ? "url('/recruiter_register.svg')" : "url('/recruiter_login.svg')";
   return (
     <div className="w-1/2 p-5 h-full flex justify-center items-center border-1 border-black">
         <div
@@ -43,4 +43,4 @@ const CompanyDiv = ({ type }) => {
   )
 }
 
-export default CompanyDiv;
+export default RecruiterDiv;
